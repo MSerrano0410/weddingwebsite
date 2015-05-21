@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Corser-Serrano Home Page</title>
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link href = "css/main.css" rel = "stylesheet" type = "text/css">
+		<link href = "js/jquery-ui-1.9.2/css/dot-luv/jquery-ui-1.9.2.custom.css" rel = "stylesheet" type = "text/css">
+		<link href = "js/jquery-ui-1.9.2/development-bundle/themes/dot-luv/jquery.ui.all.css" rel = "stylesheet" type = "text/css">	
+		<link href = "js/jquery-ui-1.9.2/development-bundle/themes/dot-luv/jquery.ui.theme.css" rel = "stylesheet" type = "text/css">	
+		<link href = "js/jquery-ui-1.9.2/development-bundle/themes/dot-luv/jquery.ui.menu.css" rel = "stylesheet" type = "text/css">
+		<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type = "text/Javascript" src = "js/jquery-ui-1.9.2/js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script type = "text/Javascript" src = "js/jquery-ui-1.9.2/development-bundle/ui/jquery.ui.menu.js"></script>
+		<script type = "text/Javascript" src  ="js/jquery.cycle.all.js"></script>
+		<script type = "text/Javascript" src = "js/translate-js/jquery.translate.js"></script>
+		<script type = "text/Javascript" src = "js/main.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#slideshow").cycle({
+					fx:    'curtainX', 
+				    sync:  false, 
+				    delay: -2000 
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id = "wrapper">
+			<a href = "index.html" title = "Back to homepage.">
+				<div id = "title_container">
+					<div id = "title">
+						<div id = "title_text" class = "cursive">Corser-Serrano Wedding</div>
+						<div id = "title_subhead" class = "cursive trn">Once upon a time a boy and a girl met and they fell in love.<br />This is their story.</div>
+					</div>
+				</div>
+			</a>
+			<ul id = "main_menu">
+				<li>
+					<a href = "index.html" class = "trn">Home</a>
+				</li>
+				<li>
+					<a href = "#" class = "trn">About</a>
+					<ul>
+						<li><a href = "venue.html" class = "trn">The Venue</a></li>
+						<li><a href = "https://www.youtube.com/watch?v=Luj1W7QoRRQ" target = "_blank" title = "Youtube video of our wedding song." class = "trn">Our Song</a></li>
+						<li><a href = "lodging.html" class = "trn">Lodging</a></li>
+						<li><a href = "https://groups.google.com/d/forum/lauraandmarvinswedding" target = "_blank" title = "Our Google group." class = "trn">Blog</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href = "directions.html" class = "trn">Directions</a>
+				</li>
+				<li>
+					<a href = "contact.php" class = "trn">Contact Us</a>
+				</li>
+			</ul>
+			<div id = "main_content">
+				<div id = "content_text" class = "trn">
+					Laura and Marvin are GETTING MARRIED on <span class = "bold_date trn">June 20, 2015!</span><br /><br />
+
+					On this site, you'll find information about the venue, lodging, directions, 
+					and much more. We've also created a Google Group to arrange carpools, submit 
+					song suggestions for our reception, share photos of us (together or individually), 
+					and much more. You can access the group by clicking 
+					<a class = "link" href = "https://groups.google.com/d/forum/lauraandmarvinswedding" target = "_blank" class = "trn">here</a>. <br /><br />
+
+					WE CAN'T WAIT TO SEE YOU FOR OUR HAPPILY EVER AFTER ON JUNE 20TH!
+				</div>
+				<div id = "slideshow">
+					<img src ="img/me_and_laura.jpg" class = "slideshow_img" />		
+					<img src ="img/christmas.jpg" class = "slideshow_img" />
+					<img src ="img/family.jpg" class = "slideshow_img" />
+					<img src ="img/jungle_love.jpg" class = "slideshow_img" />
+					<img src ="img/me_and_laura.jpg" class = "slideshow_img" />
+					<img src ="img/love.jpg" class = "slideshow_img" />
+					<img src = "img/cutesy.jpg" class = "slideshow_img" />									
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

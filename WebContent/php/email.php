@@ -1,0 +1,15 @@
+<?php
+$to = "mserrano0410@gmail.com";
+$fromEmail = $_POST['email_address'];
+$fromName = $_POST['name'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];
+
+/* Start of headers */
+$headers = "From: $fromName";
+
+$flgchk = mail ("$to", "$subject", "$message", "$headers");
+
+//redirect to empty contact.php page:
+	header("Location: http://lauraandmarvinswedding.com/contact.php");
+	exit();

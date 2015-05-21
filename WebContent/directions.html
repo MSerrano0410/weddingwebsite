@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Getting to the Castle</title>
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link href = "css/main.css" rel = "stylesheet" type = "text/css">
+		<link href = "js/jquery-ui-1.9.2/css/dot-luv/jquery-ui-1.9.2.custom.css" rel = "stylesheet" type = "text/css">
+		<link href = "js/jquery-ui-1.9.2/development-bundle/themes/dot-luv/jquery.ui.all.css" rel = "stylesheet" type = "text/css">	
+		<link href = "js/jquery-ui-1.9.2/development-bundle/themes/dot-luv/jquery.ui.theme.css" rel = "stylesheet" type = "text/css">	
+		<link href = "js/jquery-ui-1.9.2/development-bundle/themes/dot-luv/jquery.ui.menu.css" rel = "stylesheet" type = "text/css">
+		<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type = "text/Javascript" src = "js/jquery-ui-1.9.2/js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script type = "text/Javascript" src = "js/jquery-ui-1.9.2/development-bundle/ui/jquery.ui.menu.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script src = "js/jquery-print-element.js"></script>
+		<script type = "text/Javascript" src = "js/main.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#printLink").css("visibility","hidden");
+				$("#mapQuery").submit(function(event) {
+		         	event.preventDefault();
+		         	$("#directions-panel").empty();
+		         	calculateRoute($("#from_address").val());
+		       	});
+				
+				$("#printLink").click(function() {
+					$("#directions-panel").printElement();
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id = "wrapper">
+			<a href = "index.html" title = "Back to homepage.">
+				<div id = "title_container">
+					<div id = "title">
+						<div id = "title_text" class = "cursive">Corser-Serrano Wedding</div>
+						<div id = "title_subhead" class = "cursive">Once upon a time a boy and a girl met and they fell in love.<br />This is their story.</div>
+					</div>
+				</div>
+			</a>
+			<ul id = "main_menu">
+				<li>
+					<a href = "index.html">Home</a>
+				</li>
+				<li>
+					<a href = "#">About</a>
+					<ul>
+						<li><a href = "venue.html">The Venue</a></li>
+						<li><a href = "https://www.youtube.com/watch?v=Luj1W7QoRRQ" target = "_blank" title = "Youtube video of our wedding song.">Our Song</a></li>
+						<li><a href = "lodging.html">Lodging</a></li>
+						<li><a href = "https://groups.google.com/d/forum/lauraandmarvinswedding" target = "_blank" title = "Our Google group.">Blog</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href = "directions.html">Directions</a>
+				</li>
+				<li>
+					<a href = "contact.php">Contact Us</a>
+				</li>
+			</ul>
+			<div id = "main_content">
+				<div id = "content_no_img">
+					<div id = "error" class = "errormsg"></div><br />			
+					<form method = "post" id = "mapQuery" name = "mapQuery" action="#">
+						<fieldset>
+							<legend>Put in the address you're coming from and hit "Submit" to get written directions and a rendered map.
+								    <span id = "printLink">Please click here to print out text directions.</span>
+							</legend>
+							<p>
+								<label class = "email_label" for = "from_address">From: </label>
+								<input type = "text" name = "from_address" id = "from_address" class = "email_field" value = "" required/>
+							</p>
+							<p>
+								<input class = "submit" type = "submit" value = "Submit" />
+							</p>
+						</fieldset>
+					</form>
+					<br />
+					<div id="googleMap" style="width:500px;height:380px;"></div><br />
+					<label class = "email_label">Text Directions:</label><br />
+					<div id = "directions-panel"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
